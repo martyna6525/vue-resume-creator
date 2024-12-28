@@ -9,19 +9,18 @@
   --font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --spacing-base: 1rem;
   --spacing-lg: 2rem;
- }
- 
- *,
- *::before,
- *::after {
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
- }
- 
- html,
+}
 
- h2 {
+html,
+h2 {
   padding-bottom: var(--spacing-base);
 }
 
@@ -33,38 +32,37 @@ label {
   color: var(--gray-800); /* Ensure consistency with text color */
 }
 
-/* Specific padding for labels in the education section */
 .education-label {
   padding-top: 0.5rem; /* Add space above the label */
 }
 
- body {
+body {
   height: 100%;
   width: 100%;
   font-family: var(--font-base);
   color: var(--gray-800);
- }
- 
- .app-container {
+}
+
+.app-container {
   display: flex;
   min-height: 100vh;
   width: 100%;
   position: relative;
   overflow: hidden;
- }
- 
- .form-row {
+}
+
+.form-row {
   display: flex;
   justify-content: space-between;
   gap: var(--spacing-base);
   flex-wrap: wrap;
- }
- 
- .form-row .form-group {
+}
+
+.form-row .form-group {
   flex: 1;
   min-width: 220px;
- }
- 
+}
+
 /* General styles for input and textarea fields */
 .text-input,
 .text-area {
@@ -79,43 +77,29 @@ label {
   margin-bottom: 1rem; /* Add spacing between fields */
 }
 
-/* Hover effect for better user experience */
 .text-input:hover,
 .text-area:hover {
   border-color: var(--light-green);
 }
 
-/* Specific styles for the education form fields */
 .education-input {
   margin-bottom: 1.5rem; /* Add space below each input field */
 }
 
- 
- .text-area {
+.text-area {
   min-height: 80px;
   resize: vertical;
- }
- .contact-info {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem; /* Space between items */
-  padding-top: 1rem; /* Add padding above */
-  font-size: 0.9rem; /* Adjust the size of regular content */
-  }
+}
 
-  .contact-info span {
-    margin-right: 1rem; /* Optional: Adjust the margin as needed */
-  }
-
- .form-section {
+.form-section {
   flex: 1;
   padding: var(--spacing-lg);
   background-color: var(--white);
   position: relative;
   z-index: 1;
- }
- 
- .preview-section {
+}
+
+.preview-section {
   width: 210mm;
   height: 297mm;
   padding: 20mm;
@@ -125,20 +109,31 @@ label {
   position: relative;
   font-size: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
- }
- 
- .form-container {
+}
+
+.form-container {
   padding: var(--spacing-lg);
   max-height: 100vh;
   overflow-y: auto;
- }
- 
- .form-group {
+}
+
+.form-group {
   margin-bottom: var(--spacing-base);
- }
- 
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between; /* Space out header and button */
+  align-items: center; /* Align vertically */
+  margin-bottom: 1.5rem; /* Add space below the header section */
+}
+
+.form-header h2 {
+  margin: 0; /* Remove any default margin */
+}
+
 .cta-button {
-  padding: 0.75rem 1.5rem; /* Top/Bottom, Left/Right */
+  padding: 0.75rem 1.5rem; /* Comfortable button size */
   border: none;
   border-radius: 0.5rem;
   background-color: var(--primary-green);
@@ -146,7 +141,6 @@ label {
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.2s, background-color 0.2s;
-  margin-bottom: 1.5rem; /* Add spacing below button */
 }
 
 .cta-button:hover {
@@ -154,28 +148,28 @@ label {
   transform: translateY(-2px);
 }
 
- ::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 8px;
- }
- 
- ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
   background: var(--gray-200);
   border-radius: 4px;
- }
- 
- ::-webkit-scrollbar-thumb:hover {
+}
+
+::-webkit-scrollbar-thumb:hover {
   background: var(--gray-800);
- }
- 
- .resume-preview {
+}
+
+.resume-preview {
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
   box-sizing: border-box;
- }
- 
- .preview-section {
+}
+
+.preview-section {
   width: 210mm;
   height: 297mm;
   padding: 0; /* Remove padding */
@@ -183,9 +177,9 @@ label {
   position: relative;
   font-size: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
- }
- 
- .resume-header {
+}
+
+.resume-header {
   background-color: var(--primary-green);
   color: var(--white);
   padding: var(--spacing-lg);
@@ -194,37 +188,67 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
- }
- 
- .resume-content {
+}
+
+/* Updated Contact Info */
+.contact-info {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  gap: var(--spacing-base); /* Space between contact items */
+  margin-top: var(--spacing-base); /* Space above the contact info */
+  margin-bottom: var(--spacing-base); /* Space below the contact info */
+  padding: 0; /* Reset any default padding */
+  font-size: 0.9rem; /* Consistent text size */
+  color: var(--white); /* Ensure white text for readability */
+}
+
+.contact-info span {
+  display: flex;
+  align-items: center; /* Vertically align icons and text */
+  gap: 0.5rem; /* Space between icon and text */
+}
+
+.contact-info i {
+  font-size: 1.1rem; /* Slightly larger icon size for emphasis */
+  color: var(--white); /* Ensure consistent white color for icons */
+}
+
+/* Responsive Spacing for Smaller Screens */
+@media (max-width: 768px) {
+  .contact-info {
+    gap: var(--spacing-base); /* Adjust gap for smaller screens */
+    font-size: 0.85rem; /* Slightly reduce font size for readability */
+  }
+}
+
+.resume-content {
   display: grid;
   grid-template-columns: 2fr 3fr;
   gap: var(--spacing-lg);
   padding: var(--spacing-base);
   height: calc(100% - 50mm);
- }
- 
- .left-column,
- .right-column {
+}
+
+.left-column,
+.right-column {
   padding: var(--spacing-lg);
- }
- 
- .content-section {
+}
+
+.content-section {
   margin-bottom: var(--spacing-lg);
   font-size: 0.9rem; /* Adjust the size of regular content */
-  }
- 
-  .section-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: -0.025em;
-    margin-bottom: var(--spacing-base);
-    position: relative;
-    padding: 0.5rem 0; /* Add padding around the h2 (top/bottom) */
-  }
-  
- 
- .section-title::after {
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  margin-bottom: var(--spacing-base);
+  position: relative;
+  padding: 0.5rem 0; /* Add padding around the h2 (top/bottom) */
+}
+
+.section-title::after {
   content: '';
   position: absolute;
   bottom: -4px;
@@ -233,90 +257,442 @@ label {
   height: 2px;
   background-color: var(--light-green);
   opacity: 0.7;
- }
- 
- .section-content {
+}
+
+.section-content {
   font-size: 0.875rem;
   line-height: 1.6;
   margin-bottom: var(--spacing-base);
- }
- 
-/* Styled list (general layout for bullet points) */
+}
+
+/* Styled list for general sections (default behavior for other bullet points) */
 .styled-list {
   list-style: none; /* Remove default bullet points */
   padding-left: 0; /* Remove default padding */
+  margin: 0; /* Reset margins for consistency */
 }
 
 .styled-list li {
-  position: relative; /* For bullet alignment */
-  padding-left: 1.5rem; /* Add space for custom bullet */
-  margin-bottom: 0.75rem; /* Space between items */
+  position: relative; /* For custom bullet alignment */
+  display: flex; /* Default behavior for single-line items */
+  align-items: center; /* Vertically center text with bullet */
+  margin-bottom: 0.75rem; /* Space between list items */
+  padding-left: 1.5rem; /* Add space for the bullet point */
 }
 
+/* Custom bullet styling */
 .styled-list li::before {
   content: '•'; /* Custom bullet point */
   position: absolute;
   left: 0; /* Align bullet to the left */
-  top: 0.2rem; /* Adjust vertical alignment for bullet */
-  color: var(--primary-green); /* Use primary green color for bullet */
+  top: 50%; /* Center bullet relative to the text */
+  transform: translateY(-50%); /* Adjust for perfect vertical alignment */
+  color: var(--primary-green); /* Bullet color */
   font-size: 1rem; /* Match bullet size to text */
 }
 
-/* Styling for the diploma, school name, and years */
-.styled-list li div {
-  margin-top: 4px; /* Space between diploma and subtext */
+/* Custom styling for Work Experience and Education sections */
+.work-education-list li {
+  position: relative;
+  margin-bottom: 0.75rem; /* Space between items */
+  padding-left: 1.5rem; /* Reserve space for the bullet */
+  display: flex; /* Allow for primary and secondary alignment */
+  flex-direction: column; /* Stack primary and secondary text */
 }
 
-.styled-list li div:first-child {
-  font-weight: bold; /* Bold for diploma */
+/* Bullet alignment specific to Work Experience and Education */
+.work-education-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0.5rem; /* Center relative to the primary text */
+  transform: translateY(-50%);
+  color: var(--primary-green);
+  font-size: 1rem;
+}
+
+/* Primary text (Job Title, Diploma Type) */
+.work-education-list li div:first-child {
+  font-weight: bold; /* Bold primary text */
   color: var(--gray-800); /* Primary text color */
 }
 
-.styled-list li div:last-child {
-  color: var(--gray-600); /* Subtle color for school and years */
-  font-size: 0.9rem; /* Smaller font for subtext */
-  line-height: 1.5; /* Improve readability */
+/* Secondary text (Company Name, Years, School Name, etc.) */
+.work-education-list li div:last-child {
+  display: block; /* Force secondary text onto a new line */
+  color: var(--gray-600); /* Subtle color for secondary text */
+  font-size: 0.9rem; /* Slightly smaller font for secondary text */
+  margin-top: 0.25rem; /* Space between primary and secondary text */
 }
 
-
- @media (max-width: 768px) {
+@media (max-width: 768px) {
   .resume-content {
     grid-template-columns: 1fr;
   }
-/*  
-  .section-title {
-    font-size: clamp(1.25rem, 3vw, 1.5rem);
-  } */
-  
   .preview-section {
     width: 100%;
     height: auto;
     padding: var(--spacing-base);
   }
- }
- 
- @media print {
+}
+
+@media print {
   @page {
     size: A4;
     margin: 20mm;
   }
- 
+
   .preview-section {
     border: none;
     box-shadow: none;
   }
- 
+
   .resume-header {
     font-size: 1.125rem;
     padding: var(--spacing-base);
   }
-/*  
-  .section-title {
-    font-size: 1rem;
-  } */
- 
+
   .section-content,
   .styled-list li {
     font-size: 0.75rem;
   }
- }
+}
+:root {
+  --primary-green: #2F855A;
+  --light-green: #4CAF50;
+  --pale-green: #E8F5E9;
+  --white: #ffffff;
+  --gray-100: #f7fafc;
+  --gray-200: #edf2f7;
+  --gray-800: #2d3748;
+  --font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --spacing-base: 1rem;
+  --spacing-lg: 2rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+h2 {
+  padding-bottom: var(--spacing-base);
+}
+
+/* General styles for labels */
+label {
+  display: block; /* Ensure labels appear on their own line */
+  margin-bottom: 0.5rem; /* Add spacing below the label */
+  font-weight: bold; /* Make the label text bold */
+  color: var(--gray-800); /* Ensure consistency with text color */
+}
+
+.education-label {
+  padding-top: 0.5rem; /* Add space above the label */
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: var(--font-base);
+  color: var(--gray-800);
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-base);
+  flex-wrap: wrap;
+}
+
+.form-row .form-group {
+  flex: 1;
+  min-width: 220px;
+}
+
+/* General styles for input and textarea fields */
+.text-input,
+.text-area {
+  width: 100%;
+  padding: 0.75rem; /* Add comfortable padding */
+  border: 1px solid var(--gray-200);
+  border-radius: 0.5rem;
+  background-color: var(--gray-100);
+  color: var(--gray-800);
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  margin-bottom: 1rem; /* Add spacing between fields */
+}
+
+.text-input:hover,
+.text-area:hover {
+  border-color: var(--light-green);
+}
+
+.education-input {
+  margin-bottom: 1.5rem; /* Add space below each input field */
+}
+
+.text-area {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.form-section {
+  flex: 1;
+  padding: var(--spacing-lg);
+  background-color: var(--white);
+  position: relative;
+  z-index: 1;
+}
+
+.preview-section {
+  width: 210mm;
+  height: 297mm;
+  padding: 20mm;
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  margin: 0 auto;
+  position: relative;
+  font-size: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.form-container {
+  padding: var(--spacing-lg);
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.form-group {
+  margin-bottom: var(--spacing-base);
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between; /* Space out header and button */
+  align-items: center; /* Align vertically */
+  margin-bottom: 1.5rem; /* Add space below the header section */
+}
+
+.form-header h2 {
+  margin: 0; /* Remove any default margin */
+}
+
+.cta-button {
+  padding: 0.75rem 1.5rem; /* Comfortable button size */
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--primary-green);
+  color: var(--white);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.cta-button:hover {
+  background-color: var(--light-green);
+  transform: translateY(-2px);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-200);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-800);
+}
+
+.resume-preview {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.preview-section {
+  width: 210mm;
+  height: 297mm;
+  padding: 0; /* Remove padding */
+  margin: 0 auto;
+  position: relative;
+  font-size: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.resume-header {
+  background-color: var(--primary-green);
+  color: var(--white);
+  padding: var(--spacing-lg);
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  gap: var(--spacing-base); /* Space between contact items */
+  margin-top: 2rem; /* Increased space above the contact info */
+  margin-bottom: var(--spacing-base); /* Space below the contact info */
+  padding: 0; /* Reset any default padding */
+  font-size: 0.9rem; /* Consistent text size */
+  color: var(--white); /* Ensure white text for readability */
+}
+
+.resume-content {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-base);
+  height: calc(100% - 50mm);
+}
+
+.left-column,
+.right-column {
+  padding: var(--spacing-lg);
+}
+
+.content-section {
+  margin-bottom: var(--spacing-lg);
+  font-size: 0.9rem; /* Adjust the size of regular content */
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  margin-bottom: var(--spacing-base);
+  position: relative;
+  padding: 0.5rem 0; /* Add padding around the h2 (top/bottom) */
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--light-green);
+  opacity: 0.7;
+}
+
+.section-content {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-base);
+}
+
+/* Styled list for general sections (default behavior for other bullet points) */
+.styled-list {
+  list-style: none; /* Remove default bullet points */
+  padding-left: 0; /* Remove default padding */
+  margin: 0; /* Reset margins for consistency */
+}
+
+.styled-list li {
+  position: relative; /* For custom bullet alignment */
+  display: flex; /* Default behavior for single-line items */
+  align-items: center; /* Vertically center text with bullet */
+  margin-bottom: 0.75rem; /* Space between list items */
+  padding-left: 1.5rem; /* Add space for the bullet point */
+}
+
+/* Custom bullet styling */
+.styled-list li::before {
+  content: '•'; /* Custom bullet point */
+  position: absolute;
+  left: 0; /* Align bullet to the left */
+  top: 50%; /* Center bullet relative to the text */
+  transform: translateY(-50%); /* Adjust for perfect vertical alignment */
+  color: var(--primary-green); /* Bullet color */
+  font-size: 1rem; /* Match bullet size to text */
+}
+
+/* Custom styling for Work Experience and Education sections */
+.work-education-list li {
+  position: relative;
+  margin-bottom: 0.75rem; /* Space between items */
+  padding-left: 1.5rem; /* Reserve space for the bullet */
+  display: flex; /* Allow for primary and secondary alignment */
+  flex-direction: column; /* Stack primary and secondary text */
+}
+
+/* Bullet alignment specific to Work Experience and Education */
+.work-education-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0.5rem; /* Center relative to the primary text */
+  transform: translateY(-50%);
+  color: var(--primary-green);
+  font-size: 1rem;
+}
+
+/* Primary text (Job Title, Diploma Type) */
+.work-education-list li div:first-child {
+  font-weight: bold; /* Bold primary text */
+  color: var(--gray-800); /* Primary text color */
+}
+
+/* Secondary text (Company Name, Years, School Name, etc.) */
+.work-education-list li div:last-child {
+  display: block; /* Force secondary text onto a new line */
+  color: var(--gray-600); /* Subtle color for secondary text */
+  font-size: 0.9rem; /* Slightly smaller font for secondary text */
+  margin-top: 0.25rem; /* Space between primary and secondary text */
+}
+
+@media (max-width: 768px) {
+  .resume-content {
+    grid-template-columns: 1fr;
+  }
+  .preview-section {
+    width: 100%;
+    height: auto;
+    padding: var(--spacing-base);
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 20mm;
+  }
+
+  .preview-section {
+    border: none;
+    box-shadow: none;
+  }
+
+  .resume-header {
+    font-size: 1.125rem;
+    padding: var(--spacing-base);
+  }
+
+  .section-content,
+  .styled-list li {
+    font-size: 0.75rem;
+  }
+}

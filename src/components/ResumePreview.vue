@@ -16,6 +16,7 @@
         </div>
       </header>
   
+      <!-- Resume Content -->
       <div class="resume-content">
         <!-- Left Column -->
         <div class="left-column">
@@ -36,7 +37,7 @@
             <ul class="styled-list">
               <li v-for="skill in splitByLines(resumeData.softSkills)" :key="skill">{{ skill }}</li>
               <li v-if="!resumeData.softSkills">Teamwork</li>
-              <li v-if="!resumeData.softSkills">Communication</li>
+              <li v-if="!resumeData.softSkills">Problem-solving</li>
             </ul>
           </section>
   
@@ -44,8 +45,10 @@
           <section class="content-section">
             <h2 class="section-title">Languages</h2>
             <ul class="styled-list">
-              <li v-for="language in splitByLines(resumeData.languages)" :key="language">{{ language }}</li>
-              <li v-if="!resumeData.languages">English (Fluent)</li>
+              <li v-for="(entry, index) in resumeData.languages" :key="index">
+                {{ entry.language || 'Language' }} - {{ entry.proficiency || 'Proficiency Level' }}
+              </li>
+              <li v-if="!resumeData.languages.length">English - Fluent</li>
             </ul>
           </section>
         </div>
@@ -55,54 +58,73 @@
           <!-- Work Experience -->
           <section class="content-section">
             <h2 class="section-title">Work experience</h2>
-            <ul class="styled-list">
-              <li v-for="experience in splitByLines(resumeData.workExperience)" :key="experience">{{ experience }}</li>
-              <li v-if="!resumeData.workExperience">Software Developer at Tech Solutions</li>
+            <ul class="work-education-list">
+              <li v-for="(entry, index) in resumeData.workExperience" :key="index">
+                <div>
+                  <strong>{{ entry.jobTitle || 'Job title' }}</strong>
+                </div>
+                <div>
+                  {{ entry.company || 'Company Name' }}, {{ entry.years || 'Years of work' }}
+                </div>
+              </li>
+              <li v-if="!resumeData.workExperience.length">
+                <div>
+                  <strong>Software Developer</strong>
+                </div>
+                <div>Tech Solutions, 2015-2020</div>
+              </li>
             </ul>
           </section>
   
           <!-- Education -->
           <section class="content-section">
-  <h2 class="section-title">Education</h2>
-  <ul class="styled-list">
-    <li v-for="(entry, index) in resumeData.education" :key="index">
-      <div>
-        {{ entry.diploma || 'Diploma Type' }}
-      </div>
-      <div>
-        {{ entry.school || 'School Name' }}, {{ entry.years || 'Years of Study' }}
-      </div>
-    </li>
-  </ul>
-</section>
-    
-          <!-- Interests -->
-          <section class="content-section">
-            <h2 class="section-title">Interests</h2>
-            <ul class="styled-list">
-              <li v-for="interest in splitByLines(resumeData.interests)" :key="interest">{{ interest }}</li>
-              <li v-if="!resumeData.interests">Photography</li>
-              <li v-if="!resumeData.interests">Traveling</li>
+            <h2 class="section-title">Education</h2>
+            <ul class="work-education-list">
+              <li v-for="(entry, index) in resumeData.education" :key="index">
+                <div>
+                  <strong>{{ entry.diploma || 'Diploma type' }}</strong>
+                </div>
+                <div>
+                  {{ entry.school || 'School name' }}, {{ entry.years || 'Years of study' }}
+                </div>
+              </li>
+              <li v-if="!resumeData.education.length">
+                <div>
+                  <strong>Bachelor's Degree</strong>
+                </div>
+                <div>University of Tech, 2010-2014</div>
+              </li>
             </ul>
           </section>
+  
+        <!-- Interests Section -->
+        <section class="content-section">
+        <h2 class="section-title">Interests</h2>
+        <ul class="styled-list">
+            <li v-for="(interest, index) in resumeData.interests" :key="index">{{ interest || 'New Interest' }}</li>
+            <li v-if="!resumeData.interests.length">Photography</li>
+        </ul>
+        </section>
+
         </div>
       </div>
     </div>
-</template>
-
-<script>
-export default {
-  name: 'ResumePreview',
-  props: {
-    resumeData: {
-      type: Object,
-      required: true,
+  </template>
+  
+  <script>
+  export default {
+    name: 'ResumePreview',
+    props: {
+      resumeData: {
+        type: Object,
+        required: true,
+      },
     },
-  },
-  methods: {
-    splitByLines(input) {
-      return input ? input.split('\n').filter((line) => line.trim() !== '') : [];
+    methods: {
+      splitByLines(input) {
+        return input ? input.split('\n').filter((line) => line.trim() !== '') : [];
+      },
     },
-  },
-};
-</script>
+  };
+  </script>
+  

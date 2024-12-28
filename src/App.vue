@@ -28,30 +28,27 @@ export default {
     ResumePreview
   },
   data() {
-    return {
-      resumeData: {
-        // Personal Details
-        name: '',
-        email: '',
-        phone: '',
-        linkedIn: '',
-
-        // Skills
-        technicalSkills: '',
-        softSkills: '',
-        
-        // Languages
-        languages: '',
-        
-        // Main Content
-        workExperience: '',
-        education: [
-          { school: '', diploma: '', years: '' }, // Changed to an array of objects
-        ],
-        interests: '',
-      }
-    }
-  },
+  return {
+    resumeData: {
+      name: 'John Doe',
+      email: 'john.doe@example.com',
+      phone: '(555) 123-4567',
+      linkedIn: 'linkedin.com/in/johndoe',
+      technicalSkills: '',
+      softSkills: '',
+      workExperience: [
+        { company: '', jobTitle: '', years: '' },
+      ],
+      education: [
+        { school: '', diploma: '', years: '' },
+      ],
+      languages: [
+        { language: '', proficiency: '' },
+      ],
+      interests: [], // Ensure this is an array
+    },
+  };
+},
   methods: {
     updateResumeData(newData) {
       this.resumeData = { ...newData }
