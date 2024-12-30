@@ -27,13 +27,11 @@ h2 {
 /* General styles for labels */
 label {
   display: block; /* Ensure labels appear on their own line */
-  margin-bottom: 0.5rem; /* Add spacing below the label */
+  font-size: large;
+  margin-top: 0.8rem; /* Add spacing below the label */
+  margin-bottom: 0.8rem; /* Add spacing below the label */
   font-weight: bold; /* Make the label text bold */
   color: var(--gray-800); /* Ensure consistency with text color */
-}
-
-.education-label {
-  padding-top: 0.5rem; /* Add space above the label */
 }
 
 body {
@@ -389,10 +387,6 @@ label {
   margin-bottom: 0.5rem; /* Add spacing below the label */
   font-weight: bold; /* Make the label text bold */
   color: var(--gray-800); /* Ensure consistency with text color */
-}
-
-.education-label {
-  padding-top: 0.5rem; /* Add space above the label */
 }
 
 body {

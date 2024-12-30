@@ -30,10 +30,10 @@ export default {
   data() {
   return {
     resumeData: {
-      name: 'John Doe',
-      email: 'john.doe@example.com',
-      phone: '(555) 123-4567',
-      linkedIn: 'linkedin.com/in/johndoe',
+      name: '',
+      email: '',
+      phone: '',
+      linkedIn: '',
       technicalSkills: '',
       softSkills: '',
       workExperience: [
@@ -43,8 +43,8 @@ export default {
         { school: '', diploma: '', years: '' },
       ],
       languages: [
-        { language: '', proficiency: '' },
-      ],
+      { language: '', proficiency: '' },
+    ],
       interests: [], // Ensure this is an array
     },
   };

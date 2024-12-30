@@ -18,7 +18,7 @@
             class="text-input"
           />
         </div>
-    
+  
         <div class="form-group">
           <label for="email"><strong>Email:</strong></label>
           <input
@@ -45,7 +45,7 @@
             class="text-input"
           />
         </div>
-    
+  
         <div class="form-group">
           <label for="linkedIn"><strong>LinkedIn:</strong></label>
           <input
@@ -59,27 +59,27 @@
       </div>
   
       <!-- Education Section -->
-      <h3>Education</h3>
+      <label><strong>Education</strong></label>
       <div class="form-group" v-for="(entry, index) in editableData.education" :key="index">
         <label><strong>School {{ index + 1 }}</strong></label>
         <input
           v-model="entry.school"
           type="text"
-          placeholder="School name"
+          placeholder="Enter school name"
           class="text-input"
         />
-        <label><strong>Type of Diploma</strong></label>
+        <label><strong>Type of diploma</strong></label>
         <input
           v-model="entry.diploma"
           type="text"
-          placeholder="Type of diploma"
+          placeholder="Enter type of diploma"
           class="text-input"
         />
         <label><strong>Years of study</strong></label>
         <input
           v-model="entry.years"
           type="text"
-          placeholder="Years of study (e.g., 2015-2020)"
+          placeholder="Enter years of study (e.g., 2015-2020)"
           class="text-input"
         />
         <button @click="removeEducation(index)" class="cta-button">Remove</button>
@@ -87,27 +87,27 @@
       <button @click="addEducation" class="cta-button">Add Education</button>
   
       <!-- Work Experience Section -->
-      <h3>Work Experience</h3>
+      <label><strong>Work experience</strong></label>
       <div class="form-group" v-for="(entry, index) in editableData.workExperience" :key="index">
         <label><strong>Work {{ index + 1 }}</strong></label>
         <input
           v-model="entry.company"
           type="text"
-          placeholder="Company name"
+          placeholder="Enter company name"
           class="text-input"
         />
         <label><strong>Job Title</strong></label>
         <input
           v-model="entry.jobTitle"
           type="text"
-          placeholder="Job title"
+          placeholder="Enter job title"
           class="text-input"
         />
         <label><strong>Years of work</strong></label>
         <input
           v-model="entry.years"
           type="text"
-          placeholder="Years of work (e.g., 2015-2020)"
+          placeholder="Enter years of work (e.g., 2015-2020)"
           class="text-input"
         />
         <button @click="removeWorkExperience(index)" class="cta-button">Remove</button>
@@ -115,20 +115,20 @@
       <button @click="addWorkExperience" class="cta-button">Add Work Experience</button>
   
       <!-- Languages Section -->
-      <h3>Languages</h3>
+      <label><strong>Languages</strong></label>
       <div class="form-group" v-for="(entry, index) in editableData.languages" :key="index">
         <label><strong>Language {{ index + 1 }}</strong></label>
         <input
           v-model="entry.language"
           type="text"
-          placeholder="Language (e.g., English)"
+          placeholder="Enter language (e.g., English)"
           class="text-input"
         />
         <label><strong>Proficiency Level</strong></label>
         <input
           v-model="entry.proficiency"
           type="text"
-          placeholder="Proficiency (e.g., Fluent, Intermediate)"
+          placeholder="Enter proficiency level (e.g., Intermediate)"
           class="text-input"
         />
         <button @click="removeLanguage(index)" class="cta-button">Remove</button>
@@ -136,13 +136,13 @@
       <button @click="addLanguage" class="cta-button">Add Language</button>
   
       <!-- Interests Section -->
-      <h3>Interests</h3>
-      <div class="form-group" v-for="(entry, index) in editableData.interests" :key="index">
+      <label><strong>Interests</strong></label>
+      <div class="form-group" v-for="(interest, index) in editableData.interests" :key="index">
         <label><strong>Interest {{ index + 1 }}</strong></label>
         <input
           v-model="editableData.interests[index]"
           type="text"
-          placeholder="Interest (e.g., Traveling)"
+          placeholder="Enter interest (e.g., Travelling)"
           class="text-input"
         />
         <button @click="removeInterest(index)" class="cta-button">Remove</button>
@@ -205,7 +205,7 @@
         this.editableData.interests.splice(index, 1); // Remove interest by index
       },
       exportToPDF() {
-        // PDF export logic (not included for brevity)
+        console.log("Exporting to PDF...");
       },
     },
   };
